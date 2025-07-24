@@ -19,6 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PerformanceTrackerSample"
+rootProject.name = "app"
 include(":app")
 include(":PerformanceTracker")
+include(":NativeLogger")

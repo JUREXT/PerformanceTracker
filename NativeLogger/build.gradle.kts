@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.programming.performancetracker"
+    namespace = "com.programming.nativelogger"
     compileSdk = 36
 
     defaultConfig {
