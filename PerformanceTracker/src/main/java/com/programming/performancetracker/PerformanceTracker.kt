@@ -2,6 +2,7 @@ package com.programming.performancetracker
 
 import android.util.Log
 import kotlin.time.Duration
+import kotlin.time.ExperimentalTime
 import kotlin.time.TimeMark
 import kotlin.time.TimeSource
 
@@ -9,6 +10,7 @@ import kotlin.time.TimeSource
  * PerformanceTracker is a lightweight utility for measuring the execution time of code blocks or named operations.
  * It is safe to use in both development and production (you can disable logging globally).
  */
+@OptIn(ExperimentalTime::class)
 object PerformanceTracker {
 
     private const val TAG = "PerformanceTracker"
@@ -38,6 +40,7 @@ object PerformanceTracker {
     fun getTag(): String = this.tag
 
     /** Start timing for a given [label] */
+    @OptIn(ExperimentalTime::class)
     fun startTracking(label: String) {
         if (!isEnabled) return
         startMarks[label] = TimeSource.Monotonic.markNow()
