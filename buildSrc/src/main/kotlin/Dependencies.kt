@@ -2,12 +2,14 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.kotlin.dsl.project
 
 object Dependencies {
-    const val composeMaterial = "androidx.compose.material3:material3:${DependencyVersions.COMPOSE_MATERIAL3}"
-    const val composeUi = "androidx.compose.ui:ui:${DependencyVersions.COMPOSE}"
-    const val composeUiGraphics = "androidx.compose.ui:ui-graphics:${DependencyVersions.COMPOSE}"
-    const val composeUiTooling = "androidx.compose.ui:ui-tooling:${DependencyVersions.COMPOSE}"
-    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${DependencyVersions.COMPOSE}"
-    const val composeRuntime = "androidx.compose.runtime:runtime:${DependencyVersions.COMPOSE}"
+
+    const val composeBom = "androidx.compose:compose-bom:${DependencyVersions.COMPOSE_BOM}"
+    const val composeUi = "androidx.compose.ui:ui"
+    const val composeUiGraphics = "androidx.compose.ui:ui-graphics"
+    const val composeUiTooling = "androidx.compose.ui:ui-tooling"
+    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview"
+    const val composeRuntime = "androidx.compose.runtime:runtime"
+    const val material3 = "androidx.compose.material3:material3"
 
     const val hiltAndroid = "com.google.dagger:hilt-android:${DependencyVersions.HILT}"
     const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${DependencyVersions.HILT}"
@@ -24,10 +26,17 @@ object Dependencies {
     const val roomKtx = "androidx.room:room-ktx:${DependencyVersions.ROOM}"
 
     const val coreKtx = "androidx.core:core-ktx:${DependencyVersions.CORE_KTX}"
+    const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${DependencyVersions.LIFECYCLE_RUNTIME_KTX}"
+
+    const val activityCompose = "androidx.activity:activity-compose:${DependencyVersions.ACTIVITY_COMPOSE}"
 }
 
 fun DependencyHandler.core() {
     implementation(Dependencies.coreKtx)
+}
+
+fun DependencyHandler.lifecycle() {
+    implementation(Dependencies.lifecycleRuntimeKtx)
 }
 
 fun DependencyHandler.room() {
@@ -44,11 +53,13 @@ fun DependencyHandler.retrofit() {
 }
 
 fun DependencyHandler.compose() {
+    implementation(platform(Dependencies.composeBom))
+    implementation(Dependencies.activityCompose)
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeRuntime)
     implementation(Dependencies.composeUiGraphics)
     implementation(Dependencies.composeUiTooling)
-    implementation(Dependencies.composeMaterial)
+    implementation(Dependencies.material3)
     debugImplementation(Dependencies.composeUiToolingPreview)
 }
 
