@@ -53,7 +53,7 @@ fun DependencyHandler.retrofit() {
 }
 
 fun DependencyHandler.compose() {
-    implementation(platform(Dependencies.composeBom))
+    implementationPlatform(Dependencies.composeBom)
     implementation(Dependencies.activityCompose)
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeRuntime)
