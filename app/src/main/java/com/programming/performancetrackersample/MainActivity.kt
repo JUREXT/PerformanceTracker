@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.lifecycleScope
+import com.programming.gradledagger.Repository
 import com.programming.gradlehilt.TestGradleHilt
 import com.programming.nativelogger.NativeLogger.d
 import com.programming.performancetracker.PerformanceTracker
@@ -35,6 +36,8 @@ import kotlinx.coroutines.launch
 class MainActivity : ComponentActivity() {
 
     private val performanceTracker = PerformanceTracker
+
+   private val repository = Repository()
 
     companion object {
         const val LIFECYCLE_LABEL = "lifecycle_label"
@@ -54,6 +57,7 @@ class MainActivity : ComponentActivity() {
         }
 
         d { "WHAT TestGradleHilt: ${TestGradleHilt.testString()}" }
+        d { "WHAT TestDaggerHilt, Repository::init(): ${repository.init()}" }
 
         setContent {
             PerformanceTrackerSampleTheme {
@@ -65,6 +69,8 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding),
                         onLifecycleClick = {
                             performanceTracker.getDurationForLabelOrNull(label = LIFECYCLE_LABEL)
+
+                            d { "WHAT TestDaggerHilt, Repository::init(): ${repository.init()}" }
                         }
                     )
                 }

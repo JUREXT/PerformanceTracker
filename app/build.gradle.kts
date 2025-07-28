@@ -55,4 +55,5 @@ dependencies {
     performanceTrackerSDK()
     nativeLoggerSDK()
     gradleHiltSDK()
+    gradleDaggerSDK()
 }

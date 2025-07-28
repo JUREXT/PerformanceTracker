@@ -18,6 +18,9 @@ object Dependencies {
     const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${DependencyVersions.HILT}"
     const val hiltAgp = "com.google.dagger:hilt-android-gradle-plugin:${DependencyVersions.HILT}"
 
+    const val daggerAndroid = "com.google.dagger:dagger:${DependencyVersions.DAGGER}"
+    const val daggerKapt = "com.google.dagger:dagger-compiler:${DependencyVersions.DAGGER}"
+
     const val okHttp = "com.squareup.okhttp3:okhttp:${DependencyVersions.OK_HTTP}"
     const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${DependencyVersions.OK_HTTP}"
 
@@ -71,6 +74,11 @@ fun DependencyHandler.hilt() {
     kapt(Dependencies.hiltCompiler)
 }
 
+fun DependencyHandler.dagger() {
+    implementation(Dependencies.daggerAndroid)
+    kapt(Dependencies.daggerKapt)
+}
+
 fun DependencyHandler.performanceTrackerSDK() {
     implementation(project(":PerformanceTracker"))
 }
@@ -81,4 +89,8 @@ fun DependencyHandler.nativeLoggerSDK() {
 
 fun DependencyHandler.gradleHiltSDK() {
     implementation(project(":GradleHilt"))
+}
+
+fun DependencyHandler.gradleDaggerSDK() {
+    implementation(project(":GradleDagger"))
 }

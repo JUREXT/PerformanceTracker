@@ -157,5 +157,8 @@ i { "Fetching data..." }
 w { "This might cause issues" }
 e { "Something went wrong" }
 
-
-
+## More info
+- https://medium.com/@myofficework000/dependency-injection-series-dagger-2-7108ceb9dcb8
+- https://medium.com/@ruikg0857/migrating-buildsrc-to-version-catalog-and-build-logic-5ab6866b8194
+- https://medium.com/@arunb9525/supercharge-your-android-app-with-dagger-2-unlocking-the-power-of-inversion-of-control-and-06dec8174cc8
+- 
