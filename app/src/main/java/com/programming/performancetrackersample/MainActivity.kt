@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.lifecycleScope
+import com.programming.gradlehilt.TestGradleHilt
 import com.programming.nativelogger.NativeLogger.d
 import com.programming.performancetracker.PerformanceTracker
 import com.programming.performancetrackersample.MainActivity.Companion.LIFECYCLE_LABEL
@@ -51,6 +52,8 @@ class MainActivity : ComponentActivity() {
             }
             d { "WHAT Duration: ${performanceTracker.getDurationForLabelOrNull("test")}" }
         }
+
+        d { "WHAT TestGradleHilt: ${TestGradleHilt.testString()}" }
 
         setContent {
             PerformanceTrackerSampleTheme {

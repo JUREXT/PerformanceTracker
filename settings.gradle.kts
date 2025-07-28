@@ -17,3 +17,4 @@ rootProject.name = "app"
 include(":app")
 include(":PerformanceTracker")
 include(":NativeLogger")
+include(":GradleHilt")

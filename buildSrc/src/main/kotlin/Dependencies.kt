@@ -12,6 +12,8 @@ object Dependencies {
     const val composeRuntime = "androidx.compose.runtime:runtime"
     const val material3 = "androidx.compose.material3:material3"
 
+    const val COMPOSE_PLUGIN_ID = "org.jetbrains.kotlin.plugin.compose"
+
     const val hiltAndroid = "com.google.dagger:hilt-android:${DependencyVersions.HILT}"
     const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${DependencyVersions.HILT}"
     const val hiltAgp = "com.google.dagger:hilt-android-gradle-plugin:${DependencyVersions.HILT}"
@@ -75,4 +77,8 @@ fun DependencyHandler.performanceTrackerSDK() {
 
 fun DependencyHandler.nativeLoggerSDK() {
     implementation(project(":NativeLogger"))
+}
+
+fun DependencyHandler.gradleHiltSDK() {
+    implementation(project(":GradleHilt"))
 }

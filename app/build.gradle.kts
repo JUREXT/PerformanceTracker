@@ -1,16 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.compose") version DependencyVersions.KOTLIN
+    id(Dependencies.COMPOSE_PLUGIN_ID) version DependencyVersions.KOTLIN
 }
-
-//plugins {
-//    id("com.android.application")
-//    id("org.jetbrains.kotlin.android")
-//    id("dagger.hilt.android.plugin")
-//    id("org.jetbrains.kotlin.plugin.compose") version DependencyVersions.KOTLIN
-//    kotlin("kapt")
-//}
 
 android {
     namespace = "com.programming.performancetrackersample"
@@ -62,4 +54,5 @@ dependencies {
 
     performanceTrackerSDK()
     nativeLoggerSDK()
+    gradleHiltSDK()
 }
