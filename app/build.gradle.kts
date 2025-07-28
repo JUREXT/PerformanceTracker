@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
     id(Dependencies.COMPOSE_PLUGIN_ID) version DependencyVersions.KOTLIN
 }
 
@@ -37,6 +38,10 @@ android {
         jvmTarget = ProjectConfig.javaVersion.toString()
     }
 
+    kapt {
+        correctErrorTypes = true
+    }
+
     buildFeatures {
         compose = true
     }
@@ -51,6 +56,7 @@ dependencies {
     core()
     lifecycle()
     compose()
+    hilt()
 
     performanceTrackerSDK()
     nativeLoggerSDK()

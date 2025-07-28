@@ -32,12 +32,14 @@ import com.programming.performancetrackersample.MainActivity.Companion.LIFECYCLE
 import com.programming.performancetrackersample.ui.theme.PerformanceTrackerSampleTheme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
 
     private val performanceTracker = PerformanceTracker
 
-   private val repository = Repository()
+    @Inject
+    lateinit var repository: Repository
 
     companion object {
         const val LIFECYCLE_LABEL = "lifecycle_label"
