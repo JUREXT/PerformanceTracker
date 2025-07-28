@@ -1,6 +1,7 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.kotlin.dsl.project
 
+// https://medium.com/@ruikg0857/migrating-buildsrc-to-version-catalog-and-build-logic-5ab6866b8194
 object Dependencies {
 
     const val composeBom = "androidx.compose:compose-bom:${DependencyVersions.COMPOSE_BOM}"

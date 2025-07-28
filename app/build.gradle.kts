@@ -4,14 +4,22 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose") version DependencyVersions.KOTLIN
 }
 
+//plugins {
+//    id("com.android.application")
+//    id("org.jetbrains.kotlin.android")
+//    id("dagger.hilt.android.plugin")
+//    id("org.jetbrains.kotlin.plugin.compose") version DependencyVersions.KOTLIN
+//    kotlin("kapt")
+//}
+
 android {
     namespace = "com.programming.performancetrackersample"
-    compileSdk = 36
+    compileSdk = ProjectConfig.compileSdk
 
     defaultConfig {
-        applicationId = "com.programming.performancetrackersample"
-        minSdk = 23
-        targetSdk = 36
+        applicationId = "com.programming.sample"
+        minSdk = ProjectConfig.minSdk
+        targetSdk =  ProjectConfig.targetSdk
         versionCode = 1
         versionName = "1.0"
 
@@ -29,12 +37,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = ProjectConfig.sourceCompatibility
+        targetCompatibility = ProjectConfig.targetCompatibility
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = ProjectConfig.javaVersion.toString()
     }
 
     buildFeatures {
